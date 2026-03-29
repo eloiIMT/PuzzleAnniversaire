@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.45;
   font-weight: 400;
@@ -11,16 +11,9 @@
 
 @font-face {
   font-family: 'cvblock';
-  src: url('/src/assets/layton.otf') format('opentype');
+  src: url('/PuzzleAnniversaire/assets/layton.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #e5e7eb;
-    background: #111827;
-  }
 }
 
 * {
@@ -553,4 +546,79 @@ h1 {
 .close-gifts:hover {
   transform: scale(1.2);
   color: #fff;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .layout {
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .puzzle-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .side-controls {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .moves-counter {
+    min-width: 100px;
+  }
+
+  .hints-btn,
+  .restart-btn,
+  .restart-side-btn,
+  .gifts-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .puzzle-board {
+    --cell-size: clamp(50px, 15vw, 80px);
+  }
+
+  .victory-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .puzzle-image {
+    width: 200px;
+    height: 150px;
+  }
+
+  .victory-gif {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .victory-text {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .gifts-images {
+    flex-direction: column;
+  }
+
+  .gift-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hints-content,
+  .gifts-content {
+    padding: 20px;
+    max-width: 90vw;
+  }
 }

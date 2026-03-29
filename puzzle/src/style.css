@@ -4,7 +4,7 @@
   line-height: 1.45;
   font-weight: 400;
   color: #1f2937;
-  --background-image-url: url(/src/assets/layton_paper.png);
+  --background-image-url: url(/PuzzleAnniversaire/assets/layton_paper.png);
   background-image: var(--background-image-url);
   background-size: cover;
 }

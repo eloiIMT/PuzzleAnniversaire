@@ -1,5 +1,11 @@
 import './style.css'
 
+// Chemin de base dynamique pour Vite
+const BASE = import.meta.env.BASE_URL
+
+// Définir la variable CSS pour le fond d'écran
+document.documentElement.style.setProperty('--background-image-url', `url(${BASE}src/assets/layton_paper.png)`)
+
 type Position = {
   row: number
   col: number
@@ -34,10 +40,10 @@ if (!app) {
 
 app.innerHTML = `
   <audio id="background-music" loop>
-    <source src="/src/assets/puzzle.wav" type="audio/wav">
+    <source src="${BASE}src/assets/puzzle.wav" type="audio/wav">
   </audio>
   <audio id="victory-sound">
-    <source src="/src/assets/end.mp4" type="audio/mp4">
+    <source src="${BASE}src/assets/end.mp4" type="audio/mp4">
   </audio>
   <main class="layout">
     <h1>Puzzle d'anniversaire de Margaux !</h1>
@@ -55,7 +61,7 @@ app.innerHTML = `
     <div class="hints-content">
       <button id="close-hints" class="close-hints">&times;</button>
       <h2>Regardez cette petite bouille</h2>
-      <img src="/src/assets/gnoc3.jpeg" class="hint-image" />
+      <img src="${BASE}src/assets/gnoc3.jpeg" class="hint-image" />
     </div>
   </div>
   <div id="gifts-modal" class="gifts-modal">
@@ -63,8 +69,8 @@ app.innerHTML = `
       <button id="close-gifts" class="close-gifts">&times;</button>
       <h2>Tes cadeaux 🎁</h2>
       <div class="gifts-images">
-        <img src="/src/assets/cad1.webp" alt="Cadeau 1" class="gift-image" />
-        <img src="/src/assets/cad2.webp" alt="Cadeau 2" class="gift-image" />
+        <img src="${BASE}src/assets/cad1.webp" alt="Cadeau 1" class="gift-image" />
+        <img src="${BASE}src/assets/cad2.webp" alt="Cadeau 2" class="gift-image" />
       </div>
       <p class="gifts-text">Avec Jade on t'offre une place à l'aquaboulevard pour te raffraichir cet été, et le jeu de société Rédac'Chef !</p>
     </div>
@@ -72,14 +78,14 @@ app.innerHTML = `
   <div id="victory-overlay" class="victory-overlay">
     <div class="victory-content">
       <div class="victory-left">
-        <img src="/src/assets/gnoc2.jpeg" alt="Puzzle completed" class="puzzle-image" />
+        <img src="${BASE}src/assets/gnoc2.jpeg" alt="Puzzle completed" class="puzzle-image" />
         <div class="moves-display">
           <span class="moves-label">Nombre de coups:</span>
           <span class="moves-value" id="final-moves">0000</span>
         </div>
       </div>
       <div class="victory-right">
-        <img src="/src/assets/lukeloi.gif" alt="Luke" class="victory-gif" />
+        <img src="${BASE}src/assets/lukeloi.gif" alt="Luke" class="victory-gif" />
         <div class="victory-text">Victoire !!</div>
         <button id="restart-btn" class="restart-btn">Recommencer</button>
         <button id="gifts-btn" class="gifts-btn">Tu peux maintenant regarder tes cadeaux Margaux</button>
